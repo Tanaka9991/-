@@ -1,0 +1,36 @@
+#絶対に押すなよ
+
+import tkinter
+
+count = 0
+
+def click_btn():
+    global count
+    count += 1
+    if count == 1:
+        button["text"] = "押したな？"
+    elif count == 2:
+        button["text"] = "だからといって何かあるわけではないですが"
+    elif count == 3:
+        button["text"] = "押すなって"
+    elif count == 4:
+        button["text"] = "これ以上は何もないです"
+    elif count == 5:
+        button["text"] = "無いです！！！"
+    elif count == 6:
+        button["text"] = "                      "
+    elif count == 8:
+        button["text"] = "もう無理！！"
+    elif count == 9:
+        root.destroy()
+
+root = tkinter.Tk()
+root.title("絶対に押すなよ")
+root.geometry("1100x600")
+
+canvas = tkinter.Canvas(root, width=1100, height=600, bg="black")
+canvas.pack()
+
+button = tkinter.Button(root, text="絶対に押すなよ", font=("HGS教科書体", 24), command=click_btn, bg="red")
+button.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+root.mainloop()
